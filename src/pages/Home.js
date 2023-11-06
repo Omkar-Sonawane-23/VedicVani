@@ -70,6 +70,8 @@ function Home() {
             <option value="15">Chapter 15</option>
             <option value="16">Chapter 16</option>
             <option value="17">Chapter 17</option>
+            <option value="17">Chapter 18</option>
+
           </select>
           <select
             className='w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]'

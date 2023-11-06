@@ -7,6 +7,7 @@ import Snowfall from 'react-snowfall';
 import Chapters from './components/Chapters';
 import './App.css';
 import Resources from './components/Resources';
+import AboutUs from './components/AboutUs';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/api/chapter/:chap/shlok/:ver' element={<Homeque />} />
           <Route path='/api/chapter/:chap' element={<Chapters />} />
           <Route path='/api/resources' element={<Resources/>}/>
+          <Route path='/api/aboutus' element={<AboutUs/>}/>
           <Route path='*' element={<h1>404 Not Found</h1>} />
         </Routes>
       </div>

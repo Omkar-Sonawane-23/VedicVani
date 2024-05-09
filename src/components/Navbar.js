@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logounder from "./LogoUnder.png";
-import "../App.css";
+import "../App.css"; // Import the CSS file where the styles are defined
 
 const Navbar = () => {
     return (
         <section className='navbar shadow-xl h-[5rem] top-0 sticky z-[2] bg-orange'>
             <div className='container flex w-full justify-between items-center'>
                 <div className='relative'>
-                    <img className='absolute w-[20rem] top-10 ml-3 ' src={logounder} alt="Logo"></img>
-                    <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147] relative z-[10] mt-3'>VedicVani</h1>
+                    <img className='absolute w-[15rem] h-[2.4rem] top-8 ml-10 ' src={logounder} alt="Logo"></img>
+                    <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147] relative z-[10]  mt-2'>VedicVani</h1>
                 </div>
                 <ul className="flex space-x-8">
                     <li><Link to={"/"} className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Home</Link></li>

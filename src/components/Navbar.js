@@ -5,9 +5,9 @@ import "../App.css"; // Import the CSS file where the styles are defined
 
 const Navbar = () => {
     return (
-        <section className='navbar shadow-xl h-[5rem] top-0 sticky z-[2] bg-orange'>
+        <section className='shadow-xl h-[5rem] top-0 sticky z-[2] bg-orange fixed top-0 left-0 w-full z-50 bg-orange-500 text-white'>
             <div className='container flex w-full justify-between items-center'>
-                <div className='relative'>
+                <div className='relative ml-5 w-[150px]'>
                     <img className='absolute w-[15rem] h-[2.4rem] top-8 ml-10 ' src={logounder} alt="Logo"></img>
                     <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147] relative z-[10]  mt-2'>VedicVani</h1>
                 </div>

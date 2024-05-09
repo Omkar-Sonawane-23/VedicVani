@@ -42,11 +42,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000; /* Ensure navbar appears above other content */
   background-color:rgb(255, 123, 0);
   color: white;
 }
-
+.relative{
+  margin-left: 5px;
+  width: 150px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -44,9 +44,9 @@ function Home() {
       <div className="w-screen flex justify-center items-center ">
         <img className="opacity-[80%] w-100" src={krishna} alt="krishna" />
       </div>
-      <div className="absolute pl-[85vh] ">
+      <div className="relative">
         <img
-          className="backdrop-opacity-1 absolute w-[25rem] top-[3rem] right-auto"
+          className="backdrop-opacity-1 absolute w-[25rem] top-[3rem] left-[100px] right-0 mx-auto"
           src={logounder}
           alt="logo"
         ></img>

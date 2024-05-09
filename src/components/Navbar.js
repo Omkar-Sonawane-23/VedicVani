@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <section className="shadow-xl h-[5rem] top-0 fixed z-[2] flex justify-center items-center bg-[#FF6600]">
-      <div className="container flex w-[100vw] flex justify-evenly items-evenly">
+      <div className="container flex min-w-[100vw] flex justify-evenly items-evenly">
         <div className="logo m-auto">
           <img
             className="backdrop-opacity-5 absolute w-[15rem] z-[0] top-5"

@@ -1,23 +1,24 @@
-import React from 'react'
-import logounder from "./LogoUnder.png"
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logounder from "./LogoUnder.png";
+import "../App.css"; // Import the CSS file where the styles are defined
 
 const Navbar = () => {
     return (
-        <section className='shadow-xl h-[5rem] top-0 sticky z-[2] flex justify-center items-center'>
-            <div className='container flex w-[100vw] flex justify-evenly items-evenly'>
-                <div className='logo m-auto'>
-                    <img className='backdrop-opacity-5 absolute w-[15rem] z-[0] top-5' src={logounder}></img>
-                    <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147]'>VedicVani</h1>
+        <section className='navbar shadow-xl h-[5rem] top-0 sticky z-[2] bg-orange'>
+            <div className='container flex w-full justify-between items-center'>
+                <div className='relative'>
+                    <img className='absolute w-[15rem] h-[2.4rem] top-8 ml-10 ' src={logounder} alt="Logo"></img>
+                    <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147] relative z-[10]  mt-2'>VedicVani</h1>
                 </div>
-                <ul class="flex space-x-8 m-auto">
-                    <Link to={"/"}><li><a  className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Home</a></li></Link>
+                <ul className="flex space-x-8">
+                    <li><Link to={"/"} className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Home</Link></li>
                     <li><a href="#" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Resources</a></li>
-                    <Link to={"/api/aboutus"}><li><a href="#" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</a></li></Link>
+                    <li><Link to={"/api/aboutus"} className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</Link></li>
                 </ul>
             </div>
         </section>
     )
 }
 
-export default Navbar
+export default Navbar;

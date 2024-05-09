@@ -11,6 +11,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  margin-left: 5px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,6 +33,18 @@
 
 .App-link {
   color: #61dafb;
+}
+.home-page-container{
+  z-index: 0;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color:rgb(255, 123, 0);
+  color: white;
 }
 
 @keyframes App-logo-spin {

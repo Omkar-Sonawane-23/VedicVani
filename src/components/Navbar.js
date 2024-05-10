@@ -1,12 +1,16 @@
 import React from 'react'
 import logounder from "./LogoUnder.png"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+    const navigate=useNavigate();
+    function handleRedirect(){
+        navigate("/")
+    }
     return (
         <section className='shadow-xl h-[5rem] top-0 sticky z-[2] flex justify-center items-center'>
             <div className='container flex w-[100vw] flex justify-evenly items-evenly'>
-                <div className='logo m-auto'>
+                <div className='logo m-auto cursor-pointer' onClick={handleRedirect}>
                     <img className='backdrop-opacity-5 absolute w-[15rem] z-[0] top-5' src={logounder}></img>
                     <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147]'>VedicVani</h1>
                 </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'; // Import useEffect
 import krishna from './krishnabg.png';
-import logounder from "../components/LogoUnder.png";
+import logounder from '../components/LogoUnder.png';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -12,11 +12,15 @@ function Home() {
     // Use useEffect to fetch data when the component mounts
     async function fetchData() {
       try {
-        const req = await fetch(`https://vedicvani-backend.onrender.com/api/chapter/${selectedchap}`);
+        const req = await fetch(
+          `https://vedicvani-backend.onrender.com/api/chapter/${selectedchap}`
+        );
         const data = await req.json();
         const i = data.verses_count;
         const verseOptions = Array.from({ length: i }, (_, index) => (
-          <option key={index} value={index + 1}>Shlok {index + 1}</option>
+          <option key={index} value={index + 1}>
+            Shlok {index + 1}
+          </option>
         ));
         setVerseOptions(verseOptions);
       } catch (error) {
@@ -37,22 +41,28 @@ function Home() {
 
   return (
     <section>
-      <div className='w-[100vw] h-[100vh] flex justify-center items-center absolute bottom-[13vh]'>
-        <img className='opacity-[80%] absolute z-[0] m-auto' src={krishna} alt='krishna' />
+      <div className="w-[100vw] h-[100vh] flex justify-center items-center absolute bottom-[13vh]">
+        <img
+          className="opacity-[80%] absolute z-[0] m-auto"
+          src={krishna}
+          alt="krishna"
+        />
       </div>
-      <div className='absolute pl-[85vh] pt-[27rem]'>
-        <img className='backdrop-opacity-1 absolute w-[25rem] z-[0] top-[30rem]' src={logounder} alt="logo"></img>
-        <p className='text-[5rem] font-[Alegreya]'>VedicVani</p>
+      <div className="absolute pl-[85vh] pt-[27rem]">
+        <img
+          className="backdrop-opacity-1 absolute w-[25rem] z-[0] top-[30rem]"
+          src={logounder}
+          alt="logo"></img>
+        <p className="text-[5rem] font-[Alegreya]">VedicVani</p>
       </div>
-      <div className='flex justify-center items-center w-[40%] m-auto pt-[37rem]'>
-        <form className='w-[100%] flex justify-evenly items-evenly gap-10 pr-[3rem]'>
+      <div className="flex justify-center items-center w-[40%] m-auto pt-[37rem]">
+        <form className="w-[100%] flex justify-evenly items-evenly gap-10 pr-[3rem]">
           <select
-            className='w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]'
+            className="w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]"
             name="chap"
             id="chap"
             onChange={handleChangechap}
-            value={selectedchap}
-          >
+            value={setSelectedchap}>
             <option value="1">Chapter 1</option>
             <option value="2">Chapter 2</option>
             <option value="3">Chapter 3</option>
@@ -71,28 +81,32 @@ function Home() {
             <option value="16">Chapter 16</option>
             <option value="17">Chapter 17</option>
             <option value="17">Chapter 18</option>
-
           </select>
           <select
-            className='w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]'
+            className="w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]"
             name="verse"
             id="lang"
             onChange={handleChangevers}
-            value={selectedcvers}
-          >
+            value={selectedcvers}>
             {verseOptions}
           </select>
           <Link to={`/api/chapter/${selectedchap}/shlok/${selectedcvers}`}>
-            <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] ml-[3rem] w-[100px] duration-[0.3s] left-[80rem] hover:bg-[#F2F3F4] hover-text-[#002147]'>Go</button>
+            <button className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] ml-[3rem] w-[100px] duration-[0.3s] left-[80rem] hover:bg-[#F2F3F4] hover-text-[#002147]">
+              Go
+            </button>
           </Link>
         </form>
       </div>
-      <div className='flex mx-[20vw] my-[5rem] gap-10 w-[100vw]'>
+      <div className="flex mx-[20vw] my-[5rem] gap-10 w-[100vw]">
         <Link to={`/api/chapter/1/shlok/1`}>
-          <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] left-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]'>Read Shlok's</button>
-        </Link> 
+          <button className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] left-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]">
+            Read Shlok's
+          </button>
+        </Link>
         <Link to={`/api/chapter/1`}>
-          <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] right-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]'>chapters's summary</button>
+          <button className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] right-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]">
+            chapters's summary
+          </button>
         </Link>
       </div>
     </section>

@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "cd Backend && npm i && node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

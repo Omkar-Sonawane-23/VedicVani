@@ -13,7 +13,7 @@ function Home() {
     async function fetchData() {
       try {
         const req = await fetch(
-          `/api/chapter/${selectedchap}`
+          `http://localhost:3001/api/chapter/${selectedchap}`
         );
         const data = await req.json();
         const i = data.verses_count;

@@ -12,7 +12,7 @@ function Home() {
     // Use useEffect to fetch data when the component mounts
     async function fetchData() {
       try {
-        const req = await fetch(`http://localhost:3001/api/chapter/${selectedchap}`);
+        const req = await fetch(`https://secure-island-88805-6239737da534.herokuapp.com/api/chapter/${selectedchap}`);
         const data = await req.json();
         const i = data.chapter.verses_count;
         const verseOptions = Array.from({ length: i }, (_, index) => (

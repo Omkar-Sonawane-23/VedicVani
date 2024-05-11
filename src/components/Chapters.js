@@ -15,7 +15,7 @@ const Chapters = () => {
 
   useEffect(() => {
     const rquestHandler = async (chap, verse) => {
-      const currentURL = "http://localhost:3001" + window.location.pathname;
+      const currentURL = "https://secure-island-88805-6239737da534.herokuapp.com" + window.location.pathname;
       await LoadData(currentURL);
     }
 

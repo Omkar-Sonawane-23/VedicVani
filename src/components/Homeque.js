@@ -30,7 +30,7 @@ const Homeque = () => {
   }, [location]);
 
   const reqHandler = async (chap, ver) => {
-    const currentURL =  "http://localhost:3001" + window.location.pathname;
+    const currentURL =  "https://secure-island-88805-6239737da534.herokuapp.com" + window.location.pathname;
     LoadData(currentURL);
   }
 

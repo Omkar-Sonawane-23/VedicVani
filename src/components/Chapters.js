@@ -15,7 +15,7 @@ const Chapters = () => {
 
   useEffect(() => {
     const rquestHandler = async (chap, verse) => {
-      const currentURL = "https://vedicvani-backend.onrender.com" + window.location.pathname;
+      const currentURL = "http://localhost:3001" + window.location.pathname;
       await LoadData(currentURL);
     }
 

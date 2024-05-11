@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { bgChapter, bgSlok } = require('./db/db');
 const app = express();
 const port = 3001;
 
@@ -14,12 +15,20 @@ app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`);
 });
 
-app.get('/api/chapter/:chapter/shlok/:shlok', (req, res) => {
-    const file = path.join(__dirname, '../Data/bhagavad-gita-data/slok', `bhagavadgita_chapter_${req.params.chapter}_slok_${req.params.shlok}.json`);
-    res.status(200).sendFile(file);
+app.get('/api/chapter/:chapter/shlok/:shlok', async(req, res) => {
+    const chapter  = await bgChapter.findOne({chapter_number: req.params.chapter},{sloks:0})
+    const shlok = await bgSlok.findOne({chapter: req.params.chapter, verse: req.params.shlok})
+    res.status(200).json({
+        chapter: chapter,
+        shlok: shlok
+    });
+    }
+    );
+
+app.get('/api/chapter/:chapter', async(req, res) => {
+    const chapter = await bgChapter.findOne({chapter_number: req.params.chapter})
+    res.status(200).json({
+        chapter: chapter
+    });
 });
 
-app.get('/api/chapter/:chapter', (req, res) => {
-    const file = path.join(__dirname, '../Data/bhagavad-gita-data/chapter/', `bhagavadgita_chapter_${req.params.chapter}.json`);
-    res.status(200).sendFile(file);
-});

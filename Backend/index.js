@@ -2,14 +2,12 @@ const express = require('express');
 const path = require('path');
 const { bgChapter, bgSlok } = require('./db/db');
 const app = express();
+var cors = require('cors')
 const port = process.env.PORT || 3001;
 
 app.use(express.static('public'));
+app.use(cors())
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    next();
-  });
 
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`);

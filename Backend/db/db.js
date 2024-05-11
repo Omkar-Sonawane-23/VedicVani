@@ -1,7 +1,7 @@
  
  const mongoose = require('mongoose');
 
- mongoose.connect("mongodb+srv://admin:asv93TqeGVJg16QG@cluster0.orgsvct.mongodb.net/Bg")
+ mongoose.connect("MONGO_URL")
 
 const bgChapters = new mongoose.Schema({
         chapter_number: Number,

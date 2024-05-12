@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; // Import useEffect
 import krishna from "./krishnabg.png";
 import logounder from "../components/LogoUnder.png";
 import { Link } from "react-router-dom";
@@ -14,7 +14,6 @@ function Home() {
         const req = await fetch(
           `https://vedicvani-backend.onrender.com/api/chapter/${selectedchap}`
         );
-
         const data = await req.json();
 
         const i = data.verses_count;
@@ -59,6 +58,7 @@ function Home() {
       </div>
       <div className="flex flex-col items-center justify-center z-10 pt-[15rem]">
         <div className="flex justify-center items-center gap-4">
+
           <select
             className="w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]"
             name="chap"

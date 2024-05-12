@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 function Home() {
   const [selectedchap, setSelectedchap] = useState(1);
   const [selectedcvers, setSelectedcvers] = useState(1);
-  const [verseOptions, setVerseOptions] = useState([]); // Initialize verseOptions as an empty array
+  const [verseOptions, setVerseOptions] = useState([]);
 
   useEffect(() => {
-    // Use useEffect to fetch data when the component mounts
     async function fetchData() {
       try {
         const req = await fetch(
           `https://vedicvani-backend.onrender.com/api/chapter/${selectedchap}`
         );
         const data = await req.json();
+
         const i = data.verses_count;
         const verseOptions = Array.from({ length: i }, (_, index) => (
           <option key={index} value={index + 1}>
@@ -29,7 +29,7 @@ function Home() {
     }
 
     fetchData();
-  }, [selectedchap]); // Fetch data when selectedchap changes
+  }, [selectedchap]);
 
   const handleChangechap = (event) => {
     setSelectedchap(event.target.value);
@@ -40,20 +40,25 @@ function Home() {
   };
 
   return (
-    <section className="min-h-[100vh]">
-      <div className="w-screen flex justify-center items-center ">
-        <img className="opacity-[80%] w-100" src={krishna} alt="krishna" />
-      </div>
-      <div className="relative">
+    <section className="flex flex-col items-center justify-center h-screen overflow-y-auto ">
+      <div className="w-[100vw] h-[100vh] flex justify-center items-center absolute bottom-[13vh]">
         <img
-          className="backdrop-opacity-1 absolute w-[25rem] top-[3rem] left-[100px] right-0 mx-auto"
+          className="opacity-[80%] absolute z-[0] m-auto"
+          src={krishna}
+          alt="krishna"
+        />
+      </div>
+      <div className=" top-0 left-0 right-0 text-center z-10 flex flex-col items-center ">
+        <img
+          className="backdrop-opacity-1 absolute w-[25rem] z-[0] top-[20rem]"
           src={logounder}
           alt="logo"
         ></img>
-        <p className="text-[5rem] font-[Alegreya]">VedicVani</p>
+        <p className="text-[5rem] font-[Alegreya] absolute z-0 ">VedicVani</p>
       </div>
-      <div className="flex justify-center items-center w-[40%] m-auto">
-        <form className="w-[100%] flex justify-evenly items-evenly gap-10 pr-[3rem]">
+      <div className="flex flex-col items-center justify-center z-10 pt-[15rem]">
+        <div className="flex justify-center items-center gap-4">
+
           <select
             className="w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]"
             name="chap"
@@ -61,27 +66,14 @@ function Home() {
             onChange={handleChangechap}
             value={selectedchap}
           >
-            <option value="1">Chapter 1</option>
-            <option value="2">Chapter 2</option>
-            <option value="3">Chapter 3</option>
-            <option value="4">Chapter 4</option>
-            <option value="5">Chapter 5</option>
-            <option value="6">Chapter 6</option>
-            <option value="7">Chapter 7</option>
-            <option value="8">Chapter 8</option>
-            <option value="9">Chapter 9</option>
-            <option value="10">Chapter 10</option>
-            <option value="11">Chapter 11</option>
-            <option value="12">Chapter 12</option>
-            <option value="13">Chapter 13</option>
-            <option value="14">Chapter 14</option>
-            <option value="15">Chapter 15</option>
-            <option value="16">Chapter 16</option>
-            <option value="17">Chapter 17</option>
-            <option value="17">Chapter 18</option>
+            {Array.from({ length: 18 }, (_, index) => (
+              <option key={index} value={index + 1}>
+                Chapter {index + 1}
+              </option>
+            ))}
           </select>
           <select
-            className="w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]"
+            className=" w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]"
             name="verse"
             id="lang"
             onChange={handleChangevers}
@@ -89,24 +81,27 @@ function Home() {
           >
             {verseOptions}
           </select>
-          <Link to={`/api/chapter/${selectedchap}/shlok/${selectedcvers}`}>
-            <button className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] ml-[3rem] w-[100px] duration-[0.3s] left-[80rem] hover:bg-[#F2F3F4] hover-text-[#002147]">
-              Go
-            </button>
+          <Link
+            to={`/api/chapter/${selectedchap}/shlok/${selectedcvers}`}
+            className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] text-center rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[100px] h-[70px] duration-[0.3s] left-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]"
+          >
+            Go
           </Link>
-        </form>
-      </div>
-      <div className="flex my-[5rem] gap-10 w-full justify-center">
-        <Link to={`/api/chapter/1/shlok/1`}>
-          <button className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] left-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]">
+        </div>
+        <div className="flex gap-10 pt-10">
+          <Link
+            to={`/api/chapter/${selectedchap}/shlok/${selectedcvers}`}
+            className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] left-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]"
+          >
             Read Shlok's
-          </button>
-        </Link>
-        <Link to={`/api/chapter/1`}>
-          <button className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] right-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]">
-            chapters's summary
-          </button>
-        </Link>
+          </Link>
+          <Link
+            to={`/api/chapter/${selectedchap}`}
+            className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] left-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]"
+          >
+            Chapter's Summary
+          </Link>
+        </div>
       </div>
     </section>
   );

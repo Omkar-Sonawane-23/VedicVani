@@ -83,16 +83,16 @@ function Home() {
             {verseOptions}
           </select>
           <Link to={`/api/chapter/${selectedchap}/shlok/${selectedcvers}`}>
-            <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] ml-[3rem] w-[100px] duration-[0.3s] left-[80rem] hover:bg-[#F2F3F4] hover-text-[#002147]'>Go</button>
+            <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] ml-[3rem] w-[100px] duration-[0.3s] left-[80rem] hover:bg-[#F2F3F4] hover:text-[#002147]'>Go</button>
           </Link>
         </form>
       </div>
       <div className='flex mx-[20vw] my-[5rem] gap-10 w-[100vw]'>
         <Link to={`/api/chapter/1/shlok/1`}>
-          <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] left-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]'>Read Shlok's</button>
+          <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] left-[30rem] hover:bg-[#F2F3F4] hover:text-[#002147]'>Read Shlok's</button>
         </Link> 
         <Link to={`/api/chapter/1`}>
-          <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] right-[30rem] hover-bg-[#F2F3F4] hover-text-[#002147]'>chapters's summary</button>
+          <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] px-[2rem] py-[1rem] top-[50rem] w-[400px] duration-[0.3s] right-[30rem] hover:bg-[#F2F3F4] hover:text-[#002147]'>chapters's summary</button>
         </Link>
       </div>
     </section>

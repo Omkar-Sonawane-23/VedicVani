@@ -1,14 +1,19 @@
 import React from 'react'
 import logounder from "./LogoUnder.png"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
+    const navigate=useNavigate();
+    function handleRedirect(){
+        navigate("/");
+    }
     return (
         <section className='shadow-xl h-[5rem] top-0 w-full z-[2] flex justify-center items-center'>
             <div className='container flex justify-between items-center h-full sticky top-0'>
                 <div className='logo '>
                     <a href='/' >
                     <img className='backdrop-opacity-5 absolute  w-[15rem] z-10 top-5' alt="logo" src={logounder}></img></a>
+
                     <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147]'>VedicVani</h1>
                 </div>
                 <ul className="flex space-x-8">
@@ -21,4 +26,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Navbar;

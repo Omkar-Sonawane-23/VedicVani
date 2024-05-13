@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'; // Import useEffect
 import krishna from './krishnabg.png';
 import logounder from "../components/LogoUnder.png";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 
 function Home() {
   const [selectedchap, setSelectedchap] = useState(1);
@@ -37,7 +37,7 @@ function Home() {
 
   return (
     <section>
-      <div className='w-[100vw] h-[100vh] flex justify-center items-center absolute bottom-[13vh]'>
+      <div className='w-[100vw] h-[100vh] flex justify-center items-center absolute bottom-[6vh]'>
         <img className='opacity-[80%] absolute z-[0] m-auto' src={krishna} alt='krishna' />
       </div>
       <div className='absolute pl-[85vh] pt-[27rem]'>

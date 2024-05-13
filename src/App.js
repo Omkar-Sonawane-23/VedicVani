@@ -8,6 +8,7 @@ import Chapters from './components/Chapters';
 import './App.css';
 import Resources from './components/Resources';
 import AboutUs from './components/AboutUs';
+import Chronicle from './components/Chronicle';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/api/chapter/:chap' element={<Chapters />} />
           <Route path='/api/resources' element={<Resources/>}/>
           <Route path='/api/aboutus' element={<AboutUs/>}/>
+          <Route path='/chronicle' element={<Chronicle/>}/>
           <Route path='*' element={<h1>404 Not Found</h1>} />
         </Routes>
       </div>

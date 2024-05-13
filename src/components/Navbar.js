@@ -14,6 +14,7 @@ const Navbar = () => {
                     <Link to={"/"}><li><a  className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Home</a></li></Link>
                     <li><a href="#" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Resources</a></li>
                     <Link to={"/api/aboutus"}><li><a href="#" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</a></li></Link>
+                    <Link to={"/chronicle"} className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Chronicles</Link>
                 </ul>
             </div>
         </section>

@@ -1,5 +1,6 @@
 import React from 'react'
 import './chronicle.css'
+import logounder from "./LogoUnder.png"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -50,10 +51,11 @@ const Chronicle = () => {
   
   return (
     <>
-    
+    <h1 className='yada' style={{textAlign:'center'}}>"Yada Yada hi dharmasya glanir bhavati bharata</h1>
+    <h1 className='yada' style={{textAlign:'center'}}><span> Abhyutthanam adharmasya tadatmanam srjamy aham"</span></h1>
     <div className="Carousel" style={{margin:"0", padding:"0",backgroundAttachment:'fixed'}}>
-    
-    <div style={{maxWidth: "700px", margin: "0 auto",marginTop: "50px",objectFit:"cover",backgroundColor:"#2a2a2a"}}>
+    <img className='under' src={logounder}></img>
+<div style={{maxWidth: "700px", margin: "0 auto",marginTop: "50px",objectFit:"cover",backgroundColor:"#03071e"}}>
       <Slider {...settings}>
         {imageList.map((image, index) => (
           <div key={index} style={{ margin: "0 0px" }}>
@@ -64,7 +66,7 @@ const Chronicle = () => {
                 padding:0,
                 height:'400px',
                 maxWidth: "700px",
-                background: "#FFA559",
+                background: "#758e4f",
                 overflow: "hidden",
                 color: "",
                 cursor: "pointer",

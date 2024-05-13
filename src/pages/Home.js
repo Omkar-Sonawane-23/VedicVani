@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"; // Import useEffect
 import krishna from "./krishnabg.png";
 import logounder from "../components/LogoUnder.png";
 import { Link } from "react-router-dom";
+import './home.css';
 
 function Home() {
   const [selectedchap, setSelectedchap] = useState(1);
@@ -42,7 +43,7 @@ function Home() {
   return (
     <section className="min-h-[100vh]">
       <div className="w-screen flex justify-center items-center ">
-        <img className="opacity-[80%] w-100" src={krishna} alt="krishna" />
+        <img className="opacity-[80%] w-100" src={krishna} alt="krishna" style={{ animation: "float 2s ease-in-out infinite" }} />
       </div>
       <div className="relative">
         <img

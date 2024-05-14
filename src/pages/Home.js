@@ -45,16 +45,16 @@ function Home() {
       <div className="w-screen flex justify-center items-center ">
         <img className="opacity-[80%] w-100" src={krishna} alt="krishna" style={{ animation: "float 2s ease-in-out infinite" }} />
       </div>
-      <div className="relative">
+      <div className="relative mb-[20px]">
         <img
-          className="backdrop-opacity-1 absolute w-[25rem] top-[3rem] left-[100px] right-0 mx-auto"
+          className="backdrop-opacity-1 absolute w-[25rem] top-[2rem] left-[100px] right-0 mx-auto"
           src={logounder}
           alt="logo"
         ></img>
         <p className="text-[5rem] font-[Alegreya]">VedicVani</p>
       </div>
       <div className="flex justify-center items-center w-[40%] m-auto">
-        <form className="w-[100%] flex justify-evenly items-evenly gap-10 pr-[3rem]">
+        <form className="w-[100%] flex justify-evenly items-evenly gap-10">
           <select
             className="w-[18rem] h-[3rem] z-[1] rounded-[10px] pl-[40px] text-[20px]"
             name="chap"
@@ -92,7 +92,7 @@ function Home() {
           </select>
           <Link to={`/api/chapter/${selectedchap}/shlok/${selectedcvers}`}>
 
-            <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] ml-[3rem] w-[100px] duration-[0.3s] left-[80rem] hover:bg-[#F2F3F4] hover:text-[#002147]'>Go</button>
+            <button className='bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-[2rem] rounded-[1rem] ml-[3rem] w-[100px] duration-[0.3s] hover:bg-[#F2F3F4] hover:text-[#002147]'>Go</button>
 
           </Link>
         </form>

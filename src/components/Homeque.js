@@ -30,7 +30,7 @@ const Homeque = () => {
   }, [location]);
 
   const reqHandler = async (chap, ver) => {
-    const currentURL =  "https://vedicvani-backend.onrender.com/" + window.location.pathname;
+    const currentURL =  "https://secure-island-88805-6239737da534.herokuapp.com" + window.location.pathname;
     LoadData(currentURL);
   }
 
@@ -38,12 +38,12 @@ const Homeque = () => {
     const response = await fetch(url);
     if (response.ok) {
       const data = await response.json();
-      setChapter(data.chapter);
-      setVerse(data.verse);
-      setSlok(data.slok);
-      setTransliteration(data.transliteration);
-      setSlokHindi(data.tej.ht);
-      setSlokEnglish(data.siva.et);
+      setChapter(data.shlok.chapter);
+      setVerse(data.shlok.verse);
+      setSlok(data.shlok.slok);
+      setTransliteration(data.shlok.transliteration);
+      setSlokHindi(data.shlok.tej.ht);
+      setSlokEnglish(data.shlok.siva.et);
     } else {
       console.error("Failed to fetch data");
     }

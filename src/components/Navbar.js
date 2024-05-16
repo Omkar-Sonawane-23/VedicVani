@@ -8,7 +8,7 @@ const Navbar = () => {
         navigate("/");
     }
     return (
-        <section className='bg-orange-500 shadow-xl h-[5rem] top-0 w-full z-[2] fixed flex justify-center items-center'>
+        <section className='bg-white shadow-xl h-[5rem] top-0 w-full z-[2] fixed flex justify-center items-center'>
             <div className='container flex justify-between items-center h-full top-0'>
                 <div className='logo '>
                     <a href='/' >
@@ -17,10 +17,17 @@ const Navbar = () => {
                     <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147]'>VedicVani</h1>
                 </div>
                 <ul className="flex space-x-8">
-                    <li><Link to={"/"} className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Home</Link></li>
-                    <li><a href="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Resources</a></li>
-                    <li><Link to={"/api/aboutus"} className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</Link></li>
-                </ul>
+    <li>
+        <Link to="/" className="text-[1.5rem] text-black py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:bg-[#002147] hover:text-white hover:scale-105">Home</Link>
+    </li>
+    <li>
+        <a href="/" className="text-[1.5rem] text-black py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:bg-[#002147] hover:text-white hover:scale-105">Resources</a>
+    </li>
+    <li>
+        <Link to="/api/aboutus" className="text-[1.5rem] text-black py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:bg-[#002147] hover:text-white hover:scale-105">About Us</Link>
+    </li>
+</ul>
+
             </div>
         </section> 
     )

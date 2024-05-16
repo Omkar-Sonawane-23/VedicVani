@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import bgpic from "./Homebg.png";
 import icon from "./Icon.svg";
 import "../App.css";
 import { Link, useLocation } from 'react-router-dom';
+import AudioRead from './AudioRead';
 
 const Homeque = () => {
+  // setting speech
+  const speech = useRef(new SpeechSynthesisUtterance()).current;
+  const voices = window.speechSynthesis.getVoices()
+  speech.voice = voices[10]//setting default voice
+
   const location = useLocation(); // Using useLocation to get the current URL
   const [chap, setChap] = useState(1);
   const [ver, setVer] = useState(1);
@@ -84,10 +90,18 @@ const Homeque = () => {
         </Link>
       </div>
       <div className='text-center'>
-        <h1 className='text-[1.5rem] text-gray-900 bold font-Poppins'>{textFormatter(slok)}</h1>
-        <p className='text-[1rem] text-gray-900'>{textFormatter(transliteration)}</p>
-        <p className='text-[1.5rem] text-gray-900'>{textFormatter(slokHindi)}</p>
-        <p className='text-[1.3rem] text-gray-900'>{textFormatter(slokEnglish)}</p>
+        <h1 className='text-[1.5rem] text-gray-900 bold font-Poppins'>
+          <AudioRead slok={slok} speech={speech}/>
+          {textFormatter(slok)}</h1>
+        <p className='text-[1rem] text-gray-900'>
+          <AudioRead slok={transliteration} speech={speech}/>
+          {textFormatter(transliteration)}</p>
+        <p className='text-[1.5rem] text-gray-900'>
+          <AudioRead slok={slokHindi} speech={speech}/>
+          {textFormatter(slokHindi)}</p>
+        <p className='text-[1.3rem] text-gray-900'>
+          <AudioRead slok={slokEnglish} speech={speech}/>
+          {textFormatter(slokEnglish)}</p>
       </div>
     </div>
   )

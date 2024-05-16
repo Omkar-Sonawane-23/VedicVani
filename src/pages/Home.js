@@ -47,7 +47,7 @@ function Home() {
       </div>
       <div className="relative mb-[20px]">
         <img
-          className="backdrop-opacity-1 absolute w-[25rem] top-[2rem] left-[100px] right-0 mx-auto"
+          className="backdrop-opacity-1 absolute w-[28rem] top-[1.6rem] left-[150px] right-0 mx-auto"
           src={logounder}
           alt="logo"
         ></img>

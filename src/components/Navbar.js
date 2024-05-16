@@ -8,8 +8,8 @@ const Navbar = () => {
         navigate("/");
     }
     return (
-        <section className='shadow-xl h-[5rem] top-0 w-full z-[2] flex justify-center items-center'>
-            <div className='container flex justify-between items-center h-full sticky top-0'>
+        <section className='bg-orange-500 shadow-xl h-[5rem] top-0 w-full z-[2] fixed flex justify-center items-center'>
+            <div className='container flex justify-between items-center h-full top-0'>
                 <div className='logo '>
                     <a href='/' >
                     <img className='backdrop-opacity-5 absolute  w-[15rem] z-10 top-5' alt="logo" src={logounder}></img></a>
@@ -22,7 +22,7 @@ const Navbar = () => {
                     <li><Link to={"/api/aboutus"} className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</Link></li>
                 </ul>
             </div>
-        </section>
+        </section> 
     )
 }
 

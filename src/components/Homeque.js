@@ -36,7 +36,7 @@ const Homeque = () => {
 
   const reqHandler = async (chap, ver) => {
     const currentURL =
-      "https://vedicvani-backend.onrender.com/" + window.location.pathname;
+      "https://vedicvani-backend.onrender.com" + window.location.pathname;
     LoadData(currentURL);
   };
 

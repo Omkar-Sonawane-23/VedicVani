@@ -1,5 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,500&family=EB+Garamond:ital@1&family=Poppins:wght@500&family=Roboto+Condensed:wght@700&family=Young+Serif&display=swap');
+html,body{
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  scroll-behavior: smooth;
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #FF6600;
+}
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 3px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #FF6600;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FF6600;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+*:active::-webkit-scrollbar-thumb,
+*:focus::-webkit-scrollbar-thumb,
+*:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  z-index: 1;
+  background-color: #FF6600;
+}
 #text1{
   font-family: 'Roboto Condensed', sans-serif;
 }

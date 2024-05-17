@@ -42,20 +42,28 @@ const Chapters = () => {
   }
 
   return (
-    <section>
-      <h1 className='text-[2rem]'>|| {Data.name} ||</h1>
-      <img className='m-auto pt-10 w-[30rem]' src={Krihnabg} alt="Background" />
-      <div className='flex gap-[85rem] absolute'>
-        <Link to={`/api/chapter/${chap - 1}`}>
-          <img className='w-[10rem] h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer rotate-180' onClick={() => {
+    <section className='h-[100vh] -mb-4 min-vh-120 w-full'>
+    
+    
+    <div className=''>
+
+    <h1 className='text-[2rem]'>|| {Data.name} ||</h1>
+      <img className='m-auto pt-10 w-[20rem] h-[20rem] pb-0' src={Krihnabg} alt="Background" />
+      <div className='flex flex-row justify-between mt-0 pl-4 pr-4'>
+      {/* gap-[20rem] lg:gap-[85rem] */}
+      <div className='flex justify-start '>
+      <Link to={`/api/chapter/${chap - 1}`}>
+          <img className='lg:w-[8rem] w-[3rem] h-[4rem] lg:h-[8rem] left-4 opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer rotate-180' onClick={() => {
             if (chap > 1) {
               setChap(chap - 1);
               setVer(1); // Reset the verse to 1 when changing chapters
             }
           }} src={icon} alt="icon" />
         </Link>
-        <Link to={`/api/chapter/${chap + 1}`}>
-          <img className='w-[10rem] h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer' onClick={() => {
+      </div>
+      <div className='flex justify-end'>
+      <Link to={`/api/chapter/${chap + 1}`}>
+          <img className='lg:w-[8rem] w-[3rem] h-[4rem] lg:h-[8rem] right-6 opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer' onClick={() => {
             if (chap < 18) {
               setChap(chap + 1);
               setVer(1); // Reset the verse to 1 when changing chapters
@@ -63,6 +71,12 @@ const Chapters = () => {
           }} src={icon} alt="icon" />
         </Link>
       </div>
+    </div>
+     
+  
+       
+      </div>
+      <div className='gap-y-2'>
       {Data && (
         <div className='text-center flex flex-col justify-center items-center'>
           <p className='text-[2rem] text-gray-900 font-bold' dangerouslySetInnerHTML={textFormatter(Data.meaning.hi)}></p>
@@ -71,6 +85,8 @@ const Chapters = () => {
           <p className='text-[1.5rem] text-gray-900 w-[70vw]' dangerouslySetInnerHTML={textFormatter(Data.summary.en)}></p>
         </div>
       )}
+      </div>
+      
     </section>
   );
 }

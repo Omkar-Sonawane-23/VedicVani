@@ -30,7 +30,7 @@ const Homeque = () => {
   }, [location]);
 
   const reqHandler = async (chap, ver) => {
-    const currentURL =  "https://vedicvani-backend.onrender.com/" + window.location.pathname;
+    const currentURL =  "https://vedicvani-backend.onrender.com" + window.location.pathname;
     LoadData(currentURL);
   }
 
@@ -64,10 +64,12 @@ const Homeque = () => {
     <div className='flex justify-center items-center flex-col pt-[2rem] z-[1]'>
       <h1 className='text-[2rem] font-bold'>|| श्रीमद्भगवद्गीता {chapter + "." + verse} ||</h1>
       <img className='m-auto pt-10 w-[30rem]' src={bgpic} alt="Background" />
-      <div className='flex gap-[85rem] absolute'>
-
+      <div className='flex flex-row gap-[21rem] md:gap-[45rem] lg:gap-[85rem] absolute'>
+       {/*  */}
         <Link to={`/api/chapter/${chap}/shlok/${ver - 1}`}>
-          <img className='w-[10rem] h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer rotate-180' onClick={() => {
+          <img 
+          alt=''          
+          className='lg:w-[8rem] h-[4rem] w-[4rem] lg:h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer rotate-180' onClick={() => {
             if (ver > 2) {
               setVer((ver - 1));
               reqHandler(chap, ver);
@@ -75,7 +77,9 @@ const Homeque = () => {
           }} src={icon}></img>
         </Link>
         <Link to={`/api/chapter/${chap}/shlok/${ver + 1}`}>
-          <img className='w-[10rem] h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer' onClick={() => {
+          <img 
+          alt=''
+          className='lg:w-[8rem] h-[4rem] w-[4rem] lg:h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer' onClick={() => {
             if (ver < 47) {
               setVer((ver + 1));
               reqHandler(chap, ver);

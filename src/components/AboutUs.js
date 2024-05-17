@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutUs = () => {
   return (
-    <section className="py-8 px-4">
+    <section className="py-8 px-4 mt-16 h-[100vh] overflow-hidden text-xl font-semibold">
     <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-semibold text-gray-800 mb-4">About Us</h1>
         <p className="text-black-600 mb-6">
@@ -15,7 +15,7 @@ const AboutUs = () => {
         </p>
 
         <h2 className="text-2xl font-semibold text-gray-800 mb-2">The Essence of the Bhagavad Gita</h2>
-        <p className="text-black-600 mb-6">
+        <p className="text-black-600 -mb-4">
             The Bhagavad Gita, often referred to as the Gita, is a 700-verse Hindu scripture that forms part of the Indian epic Mahabharata. It consists of a conversation between Prince Arjuna and Lord Krishna, who serves as his charioteer and spiritual guide. This sacred dialogue explores the moral and philosophical dilemmas faced by Arjuna on the battlefield and offers profound insights into duty, righteousness, and the path to spiritual realization.
         </p>
 

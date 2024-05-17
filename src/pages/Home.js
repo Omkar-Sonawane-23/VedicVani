@@ -41,6 +41,7 @@ function Home() {
   };
 
   return (
+
     <section className="min-h-[100vh]">
       <div className="w-screen flex justify-center items-center ">
         <img className="opacity-[80%] w-100" src={krishna} alt="krishna" style={{ animation: "float 2s ease-in-out infinite" }} />
@@ -53,6 +54,7 @@ function Home() {
         ></img>
         <p className="text-[5rem] font-[Alegreya]">VedicVani</p>
       </div>
+
       <div className="flex justify-center items-center w-[40%] m-auto">
         <form className="w-[100%] flex justify-evenly items-evenly gap-10">
           <select

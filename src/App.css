@@ -3,10 +3,17 @@
 #text1{
   font-family: 'Roboto Condensed', sans-serif;
 }
-
+body{
+  margin: 0;
+  overflow-x: hidden;
+}
 .App {
   text-align: center;
-}
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  }
 
 .App-logo {
   height: 40vmin;

@@ -27,6 +27,7 @@ const Homeque = () => {
         setChap(newChap);
         setVer(newVer);
         setLoading(true);
+
         reqHandler(newChap, newVer);
       }
     };
@@ -58,6 +59,7 @@ const Homeque = () => {
       console.error("An error occurred while fetching data", error);
     } finally {
       setLoading(false);
+
     }
   };
 

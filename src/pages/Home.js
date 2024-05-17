@@ -43,6 +43,7 @@ function Home() {
     <section className="min-h-screen flex flex-col items-center p-4">
       <div className="w-full flex justify-center items-center mb-8">
         <img className="opacity-80 w-full max-w-xl" src={krishna} alt="krishna" style={{ animation: "float 2s ease-in-out infinite" }} />
+
       </div>
       <div className="relative mb-8">
         <img className="backdrop-opacity-1 absolute w-[28rem] max-w-full top-6 left-1/2 transform -translate-x-1/2" src={logounder} alt="logo" />
@@ -50,6 +51,7 @@ function Home() {
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center w-full max-w-xl mx-auto mb-8 gap-4">
         <form className="w-full flex flex-col md:flex-row justify-evenly items-center gap-4">
+
           <select
             className="w-full md:w-72 h-12 z-1 rounded-lg pl-4 text-lg"
             name="chap"

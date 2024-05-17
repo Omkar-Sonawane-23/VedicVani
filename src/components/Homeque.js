@@ -8,7 +8,7 @@ const Homeque = () => {
   const location = useLocation();
   const [chap, setChap] = useState(1);
   const [ver, setVer] = useState(1);
-  const [loading, setLoading] = useState(true); // New state to track loading state
+  const [loading, setLoading] = useState(true);
 
   const [chapter, setChapter] = useState("");
   const [verse, setVerse] = useState("");
@@ -26,7 +26,8 @@ const Homeque = () => {
       if (!isNaN(newChap) && !isNaN(newVer)) {
         setChap(newChap);
         setVer(newVer);
-        setLoading(true); // Set loading to true when fetching new data
+        setLoading(true);
+
         reqHandler(newChap, newVer);
       }
     };
@@ -57,7 +58,8 @@ const Homeque = () => {
     } catch (error) {
       console.error("An error occurred while fetching data", error);
     } finally {
-      setLoading(false); // Set loading to false when data fetching is complete
+      setLoading(false);
+
     }
   };
 
@@ -69,77 +71,70 @@ const Homeque = () => {
       </span>
     ));
   };
-
-  // Function to handle next verse or chapter
   const handleNext = () => {
     if (ver < 47) {
       setVer(ver + 1);
-      setLoading(true); // Set loading to true when fetching new data
+      setLoading(true);
       reqHandler(chap, ver + 1);
-    }else {
-        // If all chapters are finished
-        alert("All chapters are finished");
-      }
+    } else {
+      alert("All chapters are finished");
+    }
   };
 
-  // Function to handle previous verse or chapter
   const handlePrevious = () => {
-
     if (ver > 1) {
       setVer(ver - 1);
-      setLoading(true); // Set loading to true when fetching new data
+      setLoading(true); 
       reqHandler(chap, ver - 1);
     } else {
-        // If already on the first chapter and verse
-        alert("Already on the first chapter and verse");
+      alert("Already on the first chapter and verse");
     }
   };
 
   return (
-    <div className="flex justify-center items-center flex-col pt-[2rem] z-[1]">
-      {loading ? ( // Display loading animation while data is being fetched
-        <div className="flex justify-center items-center h-screen">
-          <div className="animate-spin h-10 w-10 rounded-full border-t-2 border-b-2 border-gray-900"></div>
+    <div className="flex flex-col justify-center items-center min-h-screen max-w-5xl mx-auto px-4">
+      {loading ? (
+        <div className="flex justify-center items-center min-h-screen">
+          <div className="animate-spin h-8 w-8 sm:h-10 sm:w-10 rounded-full border-t-2 border-b-2 border-gray-900"></div>
         </div>
       ) : (
         <>
-          <h1 className="text-[2rem] font-bold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
             || श्रीमद्भगवद्गीता {chapter + "." + verse} ||
           </h1>
-          <img
-            className="m-auto pt-10 w-[30rem]"
-            src={bgpic}
-            alt="Background"
-          />
-          <div className="flex gap-[85rem] absolute">
-            <Link to={`/api/chapter/${chap}/shlok/${ver - 1}`}>
+          <img className="w-full max-w-xl mb-8" src={bgpic} alt="Background" />
+          <div className="flex justify-between items-center w-full max-w-xl mb-8">
+            <Link
+              to={`/api/chapter/${chap}/shlok/${ver - 1}`}
+              className="transform rotate-180"
+            >
               <img
-                className="w-[10rem] h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer rotate-180"
+                className="w-8 h-6 sm:w-10 sm:h-8 opacity-20 hover:opacity-50 duration-300 cursor-pointer"
                 onClick={handlePrevious}
                 src={icon}
-              ></img>
+                alt="Previous"
+              />
             </Link>
             <Link to={`/api/chapter/${chap}/shlok/${ver + 1}`}>
               <img
-                className="w-[10rem] h-[8rem] opacity-[20%] hover:opacity-[50%] duration-[0.3s] cursor-pointer"
+                className="w-8 h-6 sm:w-10 sm:h-8 opacity-20 hover:opacity-50 duration-300 cursor-pointer"
                 onClick={handleNext}
                 src={icon}
-              ></img>
+                alt="Next"
+              />
             </Link>
           </div>
-          <div className="text-center">
-            <h1 className="text-[1.5rem] text-gray-900 bold font-Poppins">
+          <div className="text-center w-full">
+            <h1 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4">
               {textFormatter(slok)}
             </h1>
-            <p className="text-[1rem] text-gray-900">
+            <p className="text-base sm:text-lg mb-4">
               {textFormatter(transliteration)}
             </p>
-            <p className="text-[1.5rem] text-gray-900">
+            <p className="text-lg sm:text-xl md:text-2xl mb-4">
               {textFormatter(slokHindi)}
             </p>
-            <p className="text-[1.3rem] text-gray-900">
-              {textFormatter(slokEnglish)}
-            </p>
+            <p className="text-base sm:text-lg">{textFormatter(slokEnglish)}</p>
           </div>
         </>
       )}

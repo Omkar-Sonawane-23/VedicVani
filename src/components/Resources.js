@@ -8,50 +8,50 @@ const Resources = () => {
             </div> */}
               <div class="flex justify-center p-4">
                                             <div class="flex flex-col justify-center items-center ">
-                                                <div class="text-white text-3xl font-medium">Resources</div>
+                                                <div class="text-white text-5xl font-medium">Resources</div>
                                                 <div class="flex flex-col md:flex-row max-w-7xl justify-center items-center ">
                                     
-                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8">
+                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8 my-12 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-amber-700 hover:border-2 hover:border-amber-400 duration-300 ">
                                     
                                                         <div class="flex flex-col md:flex-row items-center justify-center  ">
                                                             <div class="  items-center justify-center flex py-2">
-                                                                <div class="flex flex-col  items-center justify-center text-center">
+                                                                <div class="flex flex-col  items-center justify-center text-start">
                                                                     <img src="https://source.unsplash.com/150x150/?man,boy" alt="" class="rounded-full" />
                                                                     <div class="text-stone-600 font-medium m-2"> Tailblocks provides best Tailwind CSS
                                                                         Components and Blocks to create an unique websites within minutes.</div>
                                                                     <div class="font-bold">John Doe</div>
-                                                                    <div class="text-cyan-600 italic"><a href="#">Board Director of Tailblocks</a></div>
+                                                                    <div class="text-cyan-600 italic hover:underline"><a href="#">Board Director of Tailblocks</a></div>
                                                                 </div>
                                                             </div>
                                     
                                                         </div>
                                                     </div>
-                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8">
+                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8 my-12 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-amber-700 hover:border-2 hover:border-amber-400 duration-300 ">
                                     
                                                         <div class="flex flex-col md:flex-row items-center justify-center  ">
                                                             <div class="  items-center justify-center flex py-2">
-                                                                <div class="flex flex-col  items-center justify-center text-center">
+                                                                <div class="flex flex-col  items-center justify-center text-start">
                                                                     <img src="https://source.unsplash.com/150x150/?girl" alt="" class="rounded-full" />
                                                                     <div class="text-stone-600 font-medium m-2"> Tailblocks provides best Tailwind CSS
                                                                         Components and Blocks to create an unique websites within minutes.</div>
                                                                     <div class="font-bold">Jessie</div>
-                                                                    <div class="text-cyan-600 italic"><a href="#">MD of Tailblocks</a></div>
+                                                                    <div class="text-cyan-600 italic hover:underline"><a href="#">MD of Tailblocks</a></div>
                                                                 </div>
                                                             </div>
                                     
                                                         </div>
                                                     </div>
-                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8">
+                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-amber-700 hover:border-2 hover:border-amber-400 duration-300">
                                     
                                                         <div class="flex flex-col md:flex-row items-center justify-center  ">
                                                             <div class="  items-center justify-center flex py-2">
-                                                                <div class="flex flex-col  items-center justify-center text-center">
+                                                                <div class="flex flex-col  items-center justify-center text-start">
                                                                     <img src="https://source.unsplash.com/150x150/?girl,woman" alt=""
                                                                         class="rounded-full" />
                                                                     <div class="text-stone-600 font-medium m-2"> Tailblocks provides best Tailwind CSS
                                                                         Components and Blocks to create an unique websites within minutes.</div>
                                                                     <div class="font-bold">Davina Claire</div>
-                                                                    <div class="text-cyan-600 italic"><a href="#">Board Director of Tailblocks</a></div>
+                                                                    <div class="text-cyan-600 italic hover:underline"><a href="#">Board Director of Tailblocks</a></div>
                                                                 </div>
                                                             </div>
                                     

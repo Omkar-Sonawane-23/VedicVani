@@ -9,10 +9,13 @@ import "./App.css";
 import Resources from "./components/Resources";
 import AboutUs from "./components/AboutUs";
 import AppLayout from "./components/AppLayout";
+import Preloader from "./components/Preloader.js";
+import 'aos/dist/aos.css';
 
 const App = () => {
   return (
     <BrowserRouter>
+        <Preloader/>
       <div className="App">
         <Navbar />
         <Snowfall

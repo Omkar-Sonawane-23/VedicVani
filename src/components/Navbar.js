@@ -11,11 +11,11 @@ const Navbar = () => {
     }
 
     return (
-        <section className='bg-orange-500 shadow-xl h-[5rem] top-0 w-full z-[2] fixed flex justify-center items-center'>
+        <section className='bg-orange-500 shadow-xl h-[5rem] top-0 w-full z-[2] fixed flex justify-center items-center md:px-20'>
             <div className='container mx-auto flex justify-between items-center h-full px-4'>
                <a href="/">
                <div class=" logo relative">
-                    <img class="backdrop-opacity-1 absolute w-[28rem] max-w-full top-6 left-1/2 transform -translate-x-1/2" src={logounder} alt="logo" />
+                    <img class="backdrop-opacity-1 absolute w-[30rem] max-w-full top-3 left-1/2 transform -translate-x-1/2" src={logounder} alt="logo" />
                     <p class="text-5xl font-[Alegreya] text-center">VedicVani</p>
                 </div>
                </a>

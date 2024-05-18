@@ -1,57 +1,59 @@
-import React, { useState } from 'react';
-import logounder from "./LogoUnder.png";
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react'
+import logounder from "./LogoUnder.png"
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
-    const navigate = useNavigate();
-    const [menuOpen, setMenuOpen] = useState(false);
+  
 
-    function handleRedirect() {
+    const navigate=useNavigate();
+    function handleRedirect(){
         navigate("/");
     }
-
     return (
-        <section className='bg-orange-500 shadow-xl h-[5rem] top-0 w-full z-[2] fixed flex justify-center items-center'>
-            <div className='container mx-auto flex justify-between items-center h-full px-4'>
-               <a href="/">
-               <div class=" logo relative">
-                    <img class="backdrop-opacity-1 absolute w-[28rem] max-w-full top-6 left-1/2 transform -translate-x-1/2" src={logounder} alt="logo" />
-                    <p class="text-5xl font-[Alegreya] text-center">VedicVani</p>
+        <section className='bg-gradient-to-r from-orange-200 to-yellow-200 shadow-xl shadow-yellow-200 h-[5rem]
+         top-0 w-full z-[2] fixed flex justify-center items-center'>
+            <div className='flex  flex-col sm:flex-row container sticky top-0 flex justify-between items-center h-full top-0'>
+                <div className='logo '>
+                    <a href='/' >
+                    <img className='backdrop-opacity-5 absolute  w-[15rem] z-10 top-5'
+                     alt="logo" src={logounder}></img></a>
+
+                    <h1 className='font-[Alegreya] text-[2.5rem] text-[#002147] z-3'>VedicVani</h1>
                 </div>
-               </a>
-                <ul className="hidden md:flex space-x-8">
-                    <li>
-                        <Link to="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Home</Link>
-                    </li>
-                    <li>
-                        <a href="/api/resources" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Resources</a>
-                    </li>
-                    <li>
-                        <Link to="/api/aboutus" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</Link>
-                    </li>
-                </ul>
-                <div className="md:hidden flex items-center">
-                    <button onClick={() => setMenuOpen(!menuOpen)} className="text-blue-700" aria-label="Open Menu">
-                        {menuOpen ? (
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        ) : (
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-                            </svg>
-                        )}
-                    </button>
+                <div></div>
+                <div className="w-1/3">
+             <div className="flex justify-center space-x-2  mr-2 font-[Alegreya]
+             items-center flex-col sm:flex-row  text-#56688A-600">
+                
+                <Link to={"/"} className="text-[1.5rem] relative 
+                     hover:text-yellow-500 overflow-hidden
+                    border border-solid border-yellow-200  border-2 rounded-[50px] px-2 py-2
+                    after:content-['']  after:absolute after:h-[100%]
+                    after:w-[100%] after:bg-black  after:left-0 after:bottom-[-100%]  
+                    hover:after:bottom-0 hover:after:transition-all  duration-800 ease
+                     shadow-lg shadow-green-200 hover:shadow-green-400
+                    after:z-[-2]
+                     ">
+                        Home</Link>
+                   <a href="/" className="text-[1.5rem] relative  shadow-lg shadow-green-200
+                     hover:text-yellow-500 overflow-hidden hover:shadow-green-400
+                    border border-solid  hover:bg-black border-yellow-200 border-2  border-1 rounded-[50px] px-2 py-2
+                    after:content-['']  after:absolute after:h-[100%]
+                    after:w-[100%] after:bg-black after:left-0 after:bottom-[-100%]
+                    hover:after:bottom-0 hover:after:transition-all duration-500 ease after:z-[-2]
+                     ">Resources</a>
+                <Link to={"/api/aboutus"} className="text-[1.5rem] relative  shadow-lg shadow-green-200 
+                     hover:text-yellow-500 hover:bg-black overflow-hidden hover:shadow-green-400
+                    border border-solid  border-yellow-200   border-2  rounded-[50px] px-2 py-2
+                    after:content-['']  after:absolute after:h-[100%]
+                    after:w-[100%] after:bg-black after:left-0 after:bottom-[-100%]
+                    hover:after:bottom-0 hover:after:transition-all duration-500 ease after:z-[-2]
+                     ">About Us</Link>
                 </div>
+                </div>
+                
             </div>
-            {menuOpen && (
-                <div className="md:hidden bg-orange-500 w-full absolute top-[5rem] left-0 flex flex-col items-center space-y-4 py-4 shadow-lg z-20">
-                    <Link to="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Home</Link>
-                    <a href="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Resources</a>
-                    <Link to="/api/aboutus" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>About Us</Link>
-                </div>
-            )}
-        </section>
+        </section> 
     )
 }
 

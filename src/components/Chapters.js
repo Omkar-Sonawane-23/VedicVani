@@ -10,16 +10,17 @@ const Chapters = () => {
   const [ver, setVer] = useState(1);
 
   const [Data, setData] = useState({
-    Title: '',
-    translation: '',
-    meaning: { en: '', hi: '' },
-    summary: { en: '', hi: '' },
+    Title: "",
+    translation: "",
+    meaning: { en: "", hi: "" },
+    summary: { en: "", hi: "" },
   });
   useEffect(() => {
     const rquestHandler = async (chap, verse) => {
-      const currentURL = "https://vedicvani-backend.onrender.com" + window.location.pathname;
+      const currentURL =
+        "https://vedicvani-backend.onrender.com" + window.location.pathname;
       await LoadData(currentURL);
-    }
+    };
 
     const LoadData = async (url) => {
       try {
@@ -33,7 +34,7 @@ const Chapters = () => {
       } catch (error) {
         console.error("An error occurred while fetching data", error);
       }
-    }
+    };
 
     // Load data initially when the component mounts
     rquestHandler(chap, ver);
@@ -82,14 +83,27 @@ const Chapters = () => {
               setVer(1); // Reset the verse to 1 when changing chapters
             }
           }} src={icon} alt="icon" />
+
         </Link>
       </div> */}
       {Data && (
-        <div className='text-center flex flex-col justify-center items-center'>
-          <p className='text-[2rem] text-gray-900 font-bold' dangerouslySetInnerHTML={textFormatter(Data.meaning.hi)}></p>
-          <p className='text-[1.25rem] text-gray-900' dangerouslySetInnerHTML={textFormatter(Data.meaning.en)}></p>
-          <p className='text-[1.5rem] text-gray-900 w-[70vw]' dangerouslySetInnerHTML={textFormatter(Data.summary.hi)}></p>
-          <p className='text-[1.5rem] text-gray-900 w-[70vw]' dangerouslySetInnerHTML={textFormatter(Data.summary.en)}></p>
+        <div className="text-center flex flex-col justify-center items-center">
+          <p
+            className="text-[2rem] text-gray-900 font-bold"
+            dangerouslySetInnerHTML={textFormatter(Data.meaning.hi)}
+          ></p>
+          <p
+            className="text-[1.25rem] text-gray-900"
+            dangerouslySetInnerHTML={textFormatter(Data.meaning.en)}
+          ></p>
+          <p
+            className="text-[1.5rem] text-gray-900 w-[70vw]"
+            dangerouslySetInnerHTML={textFormatter(Data.summary.hi)}
+          ></p>
+          <p
+            className="text-[1.5rem] text-gray-900 w-[70vw]"
+            dangerouslySetInnerHTML={textFormatter(Data.summary.en)}
+          ></p>
         </div>
       )}
 
@@ -105,6 +119,6 @@ const Chapters = () => {
 
     </section>
   );
-}
+};
 
 export default Chapters;

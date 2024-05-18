@@ -1,0 +1,24 @@
+#preloader {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    transition: all .75s ease;
+    opacity: 1;
+     background: linear-gradient(to top, #FF6600, #FF9900);
+}
+
+#preloader.preloaderremove {
+    height: 0vh;
+    opacity: 0;
+}
+
+.preloaderhide {
+    visibility: hidden;
+    display: none;
+}

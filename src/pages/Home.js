@@ -93,7 +93,7 @@ function Home() {
 
           <div className="relative mt-4 w-full">
             <select
-              className="custom-dropdown w-full md:w-72 h-12 z-10 rounded-lg pl-4 text-lg bg-orange-200 border-2 border-orange-400 text-orange-800 hover:bg-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none"
+              className="w-full md:w-72 h-12 z-10 rounded-lg pl-4 text-lg bg-orange-200 border-2 border-orange-400 text-orange-800 hover:bg-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 appearance-none"
               name="verse"
               id="verse"
               onChange={handleChangevers}

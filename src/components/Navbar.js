@@ -29,6 +29,9 @@ const Navbar = () => {
                     <li>
                         <Link to="/api/aboutus" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</Link>
                     </li>
+                    <li>
+                        <Link to="/contact" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Contact</Link>
+                    </li>
                 </ul>
                 <div className="md:hidden flex items-center">
                     <button onClick={() => setMenuOpen(!menuOpen)} className="text-blue-700" aria-label="Open Menu">

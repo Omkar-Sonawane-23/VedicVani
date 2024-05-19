@@ -1,67 +1,50 @@
-import React from 'react'
+import React from 'react';
+
+const books = [
+    {
+        name: 'The Bhagavad Gita',
+        image: 'https://i.pinimg.com/736x/de/80/21/de80218401a2e168a697ac4f6ddf2507.jpg'
+    },
+    {
+        name: 'The Ramayana',
+        image: 'https://i.pinimg.com/564x/66/dd/c4/66ddc40d895208649668f74df692de0e.jpg'
+    },
+    {
+        name: 'The Holy Vedas',
+        image: 'https://i.pinimg.com/564x/59/7b/69/597b699950665213b36f0fe4ff3c3ba0.jpg'
+    },
+    {
+        name: 'The Upanishads',
+        image: 'https://i.pinimg.com/564x/8f/80/d1/8f80d1e91642c474533ae37011bdad20.jpg'
+    },
+    {
+        name: 'The Mahabharata',
+        image: 'https://i.pinimg.com/564x/db/c1/ec/dbc1ec84c7998923770e604556c26cff.jpg'
+    },
+    {
+        name: 'Kalki (Avatar of Vishnu)',
+        image: 'https://i.pinimg.com/564x/05/80/82/05808240b9a7581f9fb175725f86ccce.jpg'
+    },
+    {
+        name: 'The Puranas',
+        image: 'https://i.pinimg.com/236x/f4/38/a0/f438a019288e762948e4e648da8d6805.jpg'
+    },
+];
 
 const Resources = () => {
     return (
-        <section>
-            {/* <div className='m-auto'>
-                <iframe className='mx-auto my-3' src='https://archive.org/details/rigveda-hindi-dr-ganga-sahay-sharma/page/n89/mode/2up?view=theater' height={800} width={1400}></iframe>
-            </div> */}
-              <div class="flex justify-center p-4">
-                                            <div class="flex flex-col justify-center items-center ">
-                                                <div class="text-white text-5xl font-medium">Resources</div>
-                                                <div class="flex flex-col md:flex-row max-w-7xl justify-center items-center ">
-                                    
-                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8 my-12 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-amber-700 hover:border-2 hover:border-amber-400 duration-300 ">
-                                    
-                                                        <div class="flex flex-col md:flex-row items-center justify-center  ">
-                                                            <div class="  items-center justify-center flex py-2">
-                                                                <div class="flex flex-col  items-center justify-center text-start">
-                                                                    <img src="https://source.unsplash.com/150x150/?man,boy" alt="" class="rounded-full" />
-                                                                    <div class="text-stone-600 font-medium m-2"> Tailblocks provides best Tailwind CSS
-                                                                        Components and Blocks to create an unique websites within minutes.</div>
-                                                                    <div class="font-bold">John Doe</div>
-                                                                    <div class="text-cyan-600 italic hover:underline"><a href="#">Board Director of Tailblocks</a></div>
-                                                                </div>
-                                                            </div>
-                                    
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8 my-12 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-amber-700 hover:border-2 hover:border-amber-400 duration-300 ">
-                                    
-                                                        <div class="flex flex-col md:flex-row items-center justify-center  ">
-                                                            <div class="  items-center justify-center flex py-2">
-                                                                <div class="flex flex-col  items-center justify-center text-start">
-                                                                    <img src="https://source.unsplash.com/150x150/?girl" alt="" class="rounded-full" />
-                                                                    <div class="text-stone-600 font-medium m-2"> Tailblocks provides best Tailwind CSS
-                                                                        Components and Blocks to create an unique websites within minutes.</div>
-                                                                    <div class="font-bold">Jessie</div>
-                                                                    <div class="text-cyan-600 italic hover:underline"><a href="#">MD of Tailblocks</a></div>
-                                                                </div>
-                                                            </div>
-                                    
-                                                        </div>
-                                                    </div>
-                                                    <div class="overflow-hidden w-full m-4 flex justify-center bg-white rounded-lg  md:w-[33%] px-8 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:shadow-lg hover:shadow-amber-700 hover:border-2 hover:border-amber-400 duration-300">
-                                    
-                                                        <div class="flex flex-col md:flex-row items-center justify-center  ">
-                                                            <div class="  items-center justify-center flex py-2">
-                                                                <div class="flex flex-col  items-center justify-center text-start">
-                                                                    <img src="https://source.unsplash.com/150x150/?girl,woman" alt=""
-                                                                        class="rounded-full" />
-                                                                    <div class="text-stone-600 font-medium m-2"> Tailblocks provides best Tailwind CSS
-                                                                        Components and Blocks to create an unique websites within minutes.</div>
-                                                                    <div class="font-bold">Davina Claire</div>
-                                                                    <div class="text-cyan-600 italic hover:underline"><a href="#">Board Director of Tailblocks</a></div>
-                                                                </div>
-                                                            </div>
-                                    
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> 
-        </section>
-    )
-}
+        <div className="flex flex-wrap justify-center items-center p-5 ">
+            {books.map((book, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-lg m-4 w-72 h-[500px] overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-2xl">
+                    <img className="w-full h-72 object-contain object-center " src={book.image} alt={book.name} />
+                    <div className="p-5 text-center">
+                        <h2 className="text-xl font-bold text-gray-800 mb-2">{book.name}</h2>
+                        <p className="text-gray-600">Explore the depth and wisdom of the {book.name}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+};
 
-export default Resources
+export default Resources;

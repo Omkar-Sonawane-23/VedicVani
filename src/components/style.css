@@ -122,6 +122,9 @@ input:focus{
 }
 #Form_container p{font-size: 2rem;}
 @media (max-width:830px) {
+    #detail_fill_container:first-child #Form_container p {
+        font-size: 1rem;
+    }
     #detail_fill_container{
         flex-direction: column;
     }

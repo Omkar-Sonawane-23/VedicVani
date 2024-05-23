@@ -3,6 +3,7 @@ import krishna from "./krishnabg.png";
 import logounder from "../components/LogoUnder.png";
 import { Link } from "react-router-dom";
 import './home.css';
+import VerseOfTheDay from "../components/VerseofDay";
 
 function Home() {
   const [selectedchap, setSelectedchap] = useState(1);
@@ -100,6 +101,7 @@ function Home() {
           <button className="bg-[#002147] text-[#F2F3F4] font-[Alegreya] text-2xl rounded-lg w-full px-8 py-4 duration-300 hover:bg-[#F2F3F4] hover:text-[#002147] hover:shadow-md hover:shadow-orange-900">Chapter's Summary</button>
         </Link>
       </div>
+      <VerseOfTheDay/>
     </section>
   );
 }

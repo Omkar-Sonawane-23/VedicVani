@@ -11,23 +11,31 @@ const Navbar = () => {
     }
 
     return (
-        <section className='bg-orange-500 shadow-xl h-[5rem] top-0 w-full z-[2] fixed flex justify-center items-center'>
-            <div className='container mx-auto flex justify-between items-center h-full px-4'>
-               <a href="/">
-               <div class=" logo relative">
-                    <img class="backdrop-opacity-1 absolute w-[28rem] max-w-full top-6 left-1/2 transform -translate-x-1/2" src={logounder} alt="logo" />
-                    <p class="text-5xl font-[Alegreya] text-center">VedicVani</p>
-                </div>
-               </a>
+        <section className='bg-orange-500 shadow-xl h-[4rem] top-0 w-full z-[2] fixed flex justify-center items-center'>
+            <div className='container mx-auto flex justify-between items-center h-full px-4 mt-4'>
+                <a href="/">
+                    <div class=" logo relative">
+                        <img class="backdrop-opacity-1 absolute w-[28rem]  max-w-full top-6 left-1/2 transform -translate-x-1/2" src={logounder} alt="logo" />
+                        <p class="text-2xl font-[Alegreya] text-center">VedicVani</p>
+                    </div>
+                </a>
                 <ul className="hidden md:flex space-x-8">
                     <li>
-                        <Link to="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Home</Link>
+                        <Link to="/" className="text-[1rem] text-gray-900 text-decoration-none hover:text-blue-400">Home</Link>
                     </li>
                     <li>
-                        <a href="/api/resources" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Resources</a>
+                        <Link href="/api/resources" className="text-[1rem] text-gray-900 text-decoration-none hover:text-blue-400">Resources</Link>
                     </li>
                     <li>
-                        <Link to="/api/aboutus" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">About Us</Link>
+                        <Link to="/api/aboutus" className="text-[1rem] text-gray-900 text-decoration-none hover:text-blue-400">About Us</Link>
+                    </li>
+                    <li>
+                        <Link to="/" className=" bg-[#002147]  rounded-lg px-4 py-1  hover:bg-blue-900">
+                            <button className="text-[#F2F3F4] font-[Alegreya] text-[1rem] hover:text-gray-600 ">Contact Us</button>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/contact" className="text-[1.5rem] text-blue-700 hover:text-yellow-500">Contact</Link>
                     </li>
                 </ul>
                 <div className="md:hidden flex items-center">
@@ -47,8 +55,8 @@ const Navbar = () => {
             {menuOpen && (
                 <div className="md:hidden bg-orange-500 w-full absolute top-[5rem] left-0 flex flex-col items-center space-y-4 py-4 shadow-lg z-20">
                     <Link to="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Home</Link>
-                    <a href="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Resources</a>
-                    <Link to="/api/aboutus" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>About Us</Link>
+                    <Link href="/" className="text-[1.5rem] 00 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Resources</Link>
+                    <Link to="/api/aboutus" className="text-[1.5rem] 00 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>About Us</Link>
                 </div>
             )}
         </section>

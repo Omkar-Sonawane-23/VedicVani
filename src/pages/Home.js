@@ -6,6 +6,7 @@ import './home.css';
 import { AudioPlayer } from 'react-audio-play'
 import song from '../components/krishnaflute.mp3'
 import AOS from 'aos';
+import VerseOfTheDay from "../components/VerseofDay";
 
 
 function Home() {
@@ -117,6 +118,7 @@ function Home() {
           </Link>
         </div>
       </div>
+      <VerseOfTheDay/>
     </section>
   );
 }

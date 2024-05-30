@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import Snowfall from "react-snowfall";
 import Chapters from "./components/Chapters";
 import "./App.css";
-import Resources from "./components/Resources";
+import Resources from "./pages/Resources.js";
 import AboutUs from "./components/AboutUs";
 import AppLayout from "./components/AppLayout";
 import Preloader from "./components/Preloader.js";
@@ -24,6 +24,7 @@ const App = () => {
           snowflakeCount={100}
           style={{ position: "absolute", zIndex: 3 }}
         />
+        
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Home />} />

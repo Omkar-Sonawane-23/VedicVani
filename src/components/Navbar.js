@@ -24,13 +24,13 @@ const Navbar = () => {
                         <Link to="/" className="text-[1rem] text-gray-900 text-decoration-none hover:text-blue-400">Home</Link>
                     </li>
                     <li>
-                        <Link href="/api/resources" className="text-[1rem] text-gray-900 text-decoration-none hover:text-blue-400">Resources</Link>
+                        <Link to="/api/resources" className="text-[1rem] text-gray-900 text-decoration-none hover:text-blue-400">Resources</Link>
                     </li>
                     <li>
                         <Link to="/api/aboutus" className="text-[1rem] text-gray-900 text-decoration-none hover:text-blue-400">About Us</Link>
                     </li>
                     <li>
-                        <Link to="/" className=" bg-[#002147]  rounded-lg px-4 py-1  hover:bg-blue-900">
+                        <Link to="/contact" className=" bg-[#002147]  rounded-lg px-4 py-1  hover:bg-blue-900">
                             <button className="text-[#F2F3F4] font-[Alegreya] text-[1rem] hover:text-gray-600 ">Contact Us</button>
                         </Link>
                     </li>
@@ -55,8 +55,8 @@ const Navbar = () => {
             {menuOpen && (
                 <div className="md:hidden bg-orange-500 w-full absolute top-[5rem] left-0 flex flex-col items-center space-y-4 py-4 shadow-lg z-20">
                     <Link to="/" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Home</Link>
-                    <Link href="/" className="text-[1.5rem] 00 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Resources</Link>
-                    <Link to="/api/aboutus" className="text-[1.5rem] 00 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>About Us</Link>
+                    <Link to="/api/resources" className="text-[1.5rem] text-blue-700 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>Resources</Link>
+                      <Link to="/api/aboutus" className="text-[1.5rem] 00 hover:text-yellow-500" onClick={() => setMenuOpen(false)}>About Us</Link>
                 </div>
             )}
         </section>
